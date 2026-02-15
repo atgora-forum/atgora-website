@@ -6,160 +6,88 @@
   <img alt="Barazo Logo" src="https://raw.githubusercontent.com/barazo-forum/.github/main/assets/logo-dark.svg" width="120">
 </picture>
 
-# barazo-website
+# Barazo Website
 
-**Marketing + documentation site for Barazo**
+**Marketing and documentation site for [barazo.forum](https://barazo.forum).**
 
+[![Status: Alpha](https://img.shields.io/badge/status-alpha-orange)]()
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Next.js](https://img.shields.io/badge/Next.js-16-black)](https://nextjs.org/)
 
 </div>
 
 ---
 
-## 🚧 Status: Planned (Q2 2026)
+## Overview
 
-The marketing and documentation website at barazo.forum.
+The public-facing site for the Barazo project. Will host marketing pages, pricing, comparisons, blog, and user/admin documentation. API reference documentation is served separately by [barazo-api](https://github.com/barazo-forum/barazo-api) at its `/docs` endpoint (auto-generated from code).
 
-**Current phase:** Repository will be created in Phase 1
+**Status:** This repository is scaffolded but not yet implemented. It contains repository configuration files (`.gitignore`, PR template, security policy, CLA workflow) but no application code. Implementation is planned for a later phase.
 
 ---
 
-## What is this?
+## Planned Content
 
-The barazo-website hosts:
+**Marketing pages:**
 
-**Marketing pages (`/`):**
-- Homepage - Hero, key benefits, CTAs
-- Features - What Barazo does
-- Pricing - Managed hosting tiers
-- Comparisons - vs Discourse, Flarum, Circle, etc.
-- Blog - Technical posts, community stories
-- About - Who, why, open source commitment
+- Homepage with key benefits and calls to action
+- Feature overview
+- Managed hosting pricing tiers
+- Comparison pages (vs Discourse, Flarum, Circle, etc.)
+- Blog (technical posts, community stories)
+- About page
 
 **Documentation (`/docs`):**
+
 - Self-hosting guides
 - Admin tutorials
 - Plugin development
-- Concepts (portable identity, cross-forum reputation)
+- AT Protocol concepts (portable identity, cross-forum reputation)
 - API integration guides
-
-**Note:** API reference docs are served separately by barazo-api at `/docs` (auto-generated from code).
 
 ---
 
-## Tech Stack
+## Planned Tech Stack
 
 | Component | Technology |
 |-----------|-----------|
 | Framework | Next.js 16, React 19 |
 | Styling | TailwindCSS, Radix Colors, Flexoki |
+| Typography | Source Sans 3, Source Code Pro (self-hosted via next/font) |
+| Icons | Phosphor Icons |
 | Content | MDX (blog + docs) |
-| SEO | JSON-LD, OpenGraph, sitemaps |
-| Analytics | Plausible (privacy-focused, optional) |
-| Deployment | Vercel or self-hosted |
-
----
-
-## Pages Structure
-
-```
-/                    Homepage
-/features            Feature overview
-/pricing             Managed hosting tiers
-/vs/discourse        Comparison pages
-/vs/flarum
-/vs/circle
-/blog                Blog listing
-/blog/[slug]         Blog posts (MDX)
-/docs                Documentation home
-/docs/[...slug]      Documentation pages (MDX)
-/about               About Barazo
-```
-
----
-
-## Development
-
-**Prerequisites:**
-- Node.js 24 LTS
-- pnpm
-
-**Setup:**
-```bash
-git clone https://github.com/barazo-forum/barazo-website.git
-cd barazo-website
-pnpm install
-```
-
-**Run development server:**
-```bash
-pnpm dev
-```
-
-**Run tests:**
-```bash
-pnpm test
-pnpm lint
-pnpm typecheck
-```
-
----
-
-## Content
-
-**Blog posts:** `content/blog/*.mdx`
-**Documentation:** `content/docs/**/*.mdx`
-
-Both support:
-- Frontmatter metadata
-- MDX components
-- Syntax highlighting (Shiki + Flexoki)
-- Table of contents
-
----
-
-## SEO
-
-**Requirements:**
-- Server-side rendering (SSR)
-- JSON-LD structured data
-- OpenGraph + Twitter Cards
-- Sitemap generation
-- robots.txt
-- Fast page loads (Lighthouse > 90)
-
----
-
-## Deployment
-
-**Production:** Deployed to barazo.forum
-
-**Method:**
-- Vercel (recommended) - auto-deploy on push to `main`
-- Or self-hosted via Docker
-
----
-
-## License
-
-**MIT** - Marketing and docs should be freely usable.
+| Syntax highlighting | Shiki + Flexoki theme |
+| SEO | JSON-LD, OpenGraph, sitemaps, SSR |
+| Analytics | Umami (self-hosted) |
+| Testing | Vitest, vitest-axe, @axe-core/playwright |
+| Deployment | Docker or Vercel |
 
 ---
 
 ## Related Repositories
 
-- **[barazo-api](https://github.com/barazo-forum/barazo-api)** - API reference docs (served at /docs)
-- **[Organization](https://github.com/barazo-forum)** - All repos
+| Repository | Description | License |
+|------------|-------------|---------|
+| [barazo-api](https://github.com/barazo-forum/barazo-api) | AppView backend (Fastify, firehose, REST API) | AGPL-3.0 |
+| [barazo-web](https://github.com/barazo-forum/barazo-web) | Forum frontend (Next.js, Tailwind) | MIT |
+| [barazo-lexicons](https://github.com/barazo-forum/barazo-lexicons) | AT Protocol lexicon schemas + generated types | MIT |
+| [barazo-deploy](https://github.com/barazo-forum/barazo-deploy) | Docker Compose deployment templates | MIT |
 
 ---
 
 ## Community
 
-- 🌐 **Website:** [barazo.forum](https://barazo.forum)
-- 💬 **Discussions:** [GitHub Discussions](https://github.com/orgs/barazo-forum/discussions)
-- 🐛 **Issues:** [Report bugs](https://github.com/barazo-forum/barazo-website/issues)
+- **Website:** [barazo.forum](https://barazo.forum)
+- **Discussions:** [GitHub Discussions](https://github.com/orgs/barazo-forum/discussions)
+- **Issues:** [Report bugs](https://github.com/barazo-forum/barazo-website/issues)
 
 ---
 
-© 2026 Barazo. Licensed under MIT.
+## License
+
+**MIT** -- Marketing and documentation should be freely reusable.
+
+See [LICENSE](LICENSE) for full terms.
+
+---
+
+(c) 2026 Barazo
